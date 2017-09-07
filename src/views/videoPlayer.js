@@ -9,7 +9,8 @@ var VideoPlayerView = Backbone.View.extend({
     //this.$el.html(this.template());
     var object = this.collection.models[0].attributes;
     var $template = $(this.template(object));
-    //$template.find('.embed-responsive-item').attr('src', object.snippet.thumbnails.high.url);
+    var prefix = 'https://www.youtube.com/embed/';
+    $template.find('.embed-responsive-item').attr('src', prefix + object.id);
     $template.find('.video-player-details h3').text(object.snippet.title);
     $template.find('.video-player-details div').text(object.snippet.description);
     this.$el.empty();

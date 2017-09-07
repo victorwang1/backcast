@@ -10,7 +10,7 @@ var VideoListEntryView = Backbone.View.extend({
     // this.$el.html(this.template(this.model.attributes));
     var object = this.model.attributes;
     var $template = $(this.template(object));
-    //var prefix = 'https://www.youtube.com/watch?v=';
+    
     $template.find('.media-object').attr('src', object.snippet.thumbnails.default.url);
     $template.find('.video-list-entry-title').text(object.snippet.title);
     $template.find('.video-list-entry-detail').text(object.snippet.description);
